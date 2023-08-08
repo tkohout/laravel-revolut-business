@@ -64,6 +64,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Oauth Scope
+    |--------------------------------------------------------------------------
+    |
+    | Set the scope of the authorization request. Options are READ, WRITE or PAY. You can
+    | combine multiple scopes by separating them with a comma (e.g: READ,WRITE).
+    |
+    */
+    'scope' => env('REVOLUT_SCOPE', "READ"),
+
+    /*
+    |--------------------------------------------------------------------------
     | Tokens
     |--------------------------------------------------------------------------
     |

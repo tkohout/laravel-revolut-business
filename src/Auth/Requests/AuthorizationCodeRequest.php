@@ -52,21 +52,27 @@ class AuthorizationCodeRequest
      * @var string
      */
     public $state;
+    /**
+     * @var string
+     */
+    private $scope;
 
     /**
      * Create a new request
      *
      * @param string $clientId The Revolut Business Client ID
      * @param string $redirectUri The OAuth redirect URI
-     * @param bool $sandbox Whether or not to use the sandbox environment
+     * @param bool $sandbox Whether to use the sandbox environment
+     * @param string $scope The OAuth scope
      * @return void
      */
-    public function __construct(string $clientId, string $redirectUri, bool $sandbox = true)
+    public function __construct(string $clientId, string $redirectUri, string $scope, bool $sandbox = true)
     {
         $this->clientId = $clientId;
         $this->redirectUri = $redirectUri;
         $this->sandbox = $sandbox;
         $this->state = $this->generateState();
+        $this->scope = $scope;
     }
 
     /**
@@ -100,7 +106,8 @@ class AuthorizationCodeRequest
             'response_type' => 'request_token',
             'client_id' => $this->clientId,
             'redirect_uri' => $this->redirectUri,
-            'state' => $this->state
+            'state' => $this->state,
+            'scope' => $this->scope
         ]);
     }
 
