@@ -4,7 +4,7 @@
     "license": "MIT",
     "require": {
         "firebase/php-jwt": "^5.2",
-        "guzzlehttp/guzzle": "^6.5"
+        "guzzlehttp/guzzle": "^7.0.1"
     },
     "autoload": {
         "psr-4": {
