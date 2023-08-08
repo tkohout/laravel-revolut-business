@@ -54,8 +54,8 @@ class RevolutServiceProvider extends ServiceProvider
             return new AuthorizationCodeRequest(
                 config('revolut.client_id'),
                 config('revolut.redirect_uri'),
-                config('revolut.sandbox'),
-                config('revolut.scope')
+                config('revolut.scope'),
+                config('revolut.sandbox')
             );
         });
 
